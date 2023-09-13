@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block messages %}
+<ul class="messagelist" id='custom-message-extension'>
+    {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|capfirst }}</li>
+    {% endfor %}
+    </ul>
+<script src="{% static 'room.js' %}"></script>
+{% endblock messages %}
